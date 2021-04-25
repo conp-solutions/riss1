@@ -1,0 +1,36 @@
+riss, Copyright 2009 Norbert Manthey
+This program may be redistributed or modified under the terms of the
+GNU General Public License. A copy of the licence can be found in COPYING.
+
+========== CONFIGURATION
+
+The solver can be build as sequential solver (riss) or for multi-threading
+using the portfolio approach (priss). For both variants, building and running
+the solver is described below.
+
+========== BUILDING
+
+riss:
+Run "make riss" in the root directory.
+
+priss:
+Run "make priss" in the root directory.
+
+Note: You may add "-j" to the make parameters, because building the solver
+uses a lot of time. Furthermore, if riss has been build, you have make sure
+that you run "make clean" before compiling priss, and the other way aroung.
+
+========== RUNNING
+riss:
+./riss problem.cnf solution.cnf
+
+priss:
+./priss problem.cnf solution.cnf
+
+Note: For more information and parameters of the solver run the solver with
+the parameter "-h" (basic help) or "--help" (very verbose help on configuration
+of the solver).
+
+Note: priss uses usually 4 threads for solving. You can change the number of used
+thread by adding the parameters "-PNW_threads X" to the commandline, where X
+represents the number of threads that should be used.
